@@ -117,7 +117,7 @@
             language: {
                 url: languages['es']
             },
-            pageLength: 20,
+            pageLength: 25,
             dom: 'lBfrtip',
             buttons: [{
                     extend: 'copy',
