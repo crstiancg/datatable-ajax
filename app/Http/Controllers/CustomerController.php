@@ -15,7 +15,6 @@ class CustomerController extends Controller
         if($request->ajax())
         {
             $data = Customer::select('*');
-
             return DataTables::of($data)
             ->addColumn('actions', 'customer.actions')
             ->rawColumns(['actions'])
@@ -72,6 +71,6 @@ class CustomerController extends Controller
     {
         $customer->delete();
 
-        return Redirect::back();
+        return back()->with('eliminar','delete');
     }
 }

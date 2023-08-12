@@ -37,13 +37,28 @@
 @endsection
 
 @section('js')
+    @if (session('eliminar') == 'delete')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'El registro ha sido eliminado.',
+                'success'
+            )
+        </script>
+    @endif
+
+
     <script>
         $(document).ready(function() {
             $('#customer').DataTable({
                 processing: true,
                 responsive: true,
                 serviceSide: true,
+                autoWidth: false,
+                pagingType: "full_numbers",
                 ajax: "{{ route('customer.index') }}",
+                dataType: 'json',
+                type: 'POST',
                 columns: [{
                         data: 'id',
                         name: 'id'

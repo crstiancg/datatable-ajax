@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         People::factory(1000)->create();
-        Customer::factory(1000)->create();
+        Customer::factory(20000)->create();
     }
 }
